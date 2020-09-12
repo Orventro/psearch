@@ -62,6 +62,7 @@ int main(int argc, char* argv[]) {
                  << "-t# \t\t - number of threads\n" \
                  << "pattern\n" \
                  << "directory\n";
+            return 0;
         } else if(s == "-n") 
             recursive = false;
         else if(pattern == "")
@@ -71,6 +72,11 @@ int main(int argc, char* argv[]) {
         else {
             cout << "Wrong input, seek --help\n";
         }
+    }
+
+    if(pattern == "") {
+        cout << "No pattern provided\n";
+        return 1;
     }
 
     // sanity check
